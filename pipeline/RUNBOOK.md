@@ -22,7 +22,8 @@ Voice: warm, encouraging, down-to-earth, practical — a knowledgeable neighbor,
 ## Slide rules
 - 5–7 slides, 1080×1920. Slide 1 = hook that works with no caption. Last slide = soft CTA (register free at learnwithyarden.com, link in bio).
 - Large type, high contrast, content inside the safe zone (template handles it). Nothing that looks tappable — no buttons.
-- Slide text must never overlap the "Swipe →" marker. The template reserves a strip above it; keep hook text under ~90 characters and bodies under ~240 so nothing overflows into that strip. After rendering, check slide 1 and any dense slide.
+- The swipe cue "(SWIPE LEFT TO WATCH)" appears centered on slide 1 only; no cue on any other slide (template enforces this).
+- Slide text must never overlap the swipe cue. The template reserves a strip above it; keep hook text under ~90 characters and bodies under ~240 so nothing overflows into that strip. After rendering, check slide 1 and any dense slide.
 - No "Free in-person class · Alameda, CA" pill/badge on any slide. Mention the class in slide text or on the CTA slide instead.
 - The Yarden wordmark appears ONLY on the CTA (last) slide. Middle slides carry no logo; a class mention in the text is fine.
 - Library photos appear ONLY on the first slide (as a full-bleed "photo-hook") or the CTA slide — never on middle slides.

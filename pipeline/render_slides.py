@@ -40,8 +40,9 @@ def brand_corner():
     """Rule: the Yarden wordmark appears only on the CTA slide. Other slides never show it."""
     return ""
 
-def swipe(label="Swipe"):
-    return f'<div class="swipe">{label} →</div>'
+def swipe(label="(Swipe left to watch)"):
+    """Rule: the swipe cue appears only on slide 1, centered."""
+    return f'<div class="swipe">{html.escape(label)}</div>'
 
 def photo_tag(name, cls="photo tall", focus=None):
     p = PHOTOS / name if name else None
@@ -79,7 +80,7 @@ def slide_tip(s, i, n):
     ground = s.get("ground", "ground-cream" if i % 2 else "ground-sand")
     return f'''<div class="slide {ground}"><div class="safe vc">{num}
       <div class="stack"><div class="heading">{hl(s["heading"])}</div><div class="divider"></div>{body}</div></div>
-      {brand_corner() if s.get("brand") else ""}{swipe() if i < n-1 else ""}</div>'''
+      {brand_corner() if s.get("brand") else ""}</div>'''
 
 def slide_list(s, i, n):
     items = "".join(f'<div class="check">{hl(t)}</div>' for t in s["items"])
@@ -87,7 +88,7 @@ def slide_list(s, i, n):
     return f'''<div class="slide {ground}"><div class="safe vc">
       <div class="stack"><div class="heading">{hl(s["heading"])}</div><div class="divider"></div>
       <div class="card"><div class="stack">{items}</div></div></div></div>
-      {brand_corner() if s.get("brand") else ""}{swipe() if i < n-1 else ""}</div>'''
+      {brand_corner() if s.get("brand") else ""}</div>'''
 
 def slide_photo(s, i, n):
     if 0 < i < n - 1:   # Rule: library photos only on the first or last slide -> render as a text card
@@ -99,7 +100,7 @@ def slide_photo(s, i, n):
     body = f'<div class="body">{hl(s["body"])}</div>' if s.get("body") else ""
     return f'''<div class="slide ground-paper"><div class="safe vc">
       <div class="stack"><div class="heading">{hl(s["heading"])}</div>{img}{body}</div></div>
-      {brand_corner() if s.get("brand", True) else ""}{swipe() if i < n-1 else ""}</div>'''
+      {brand_corner() if s.get("brand", True) else ""}</div>'''
 
 def slide_quote(s, i, n):
     """A supplied testimonial, verbatim. Only use text Isaac supplied; never invent quotes."""
@@ -108,7 +109,7 @@ def slide_quote(s, i, n):
       <div class="stack"><div class="heading">{hl(heading)}</div>
       <div class="card-warm"><div class="quote-mark">“</div><div class="quote">{hl(s["quote"])}</div>
       <div class="quote-by">— {hl(s["by"])}</div></div></div></div>
-      {brand_corner() if s.get("brand", True) else ""}{swipe() if i < n-1 else ""}</div>'''
+      {brand_corner() if s.get("brand", True) else ""}</div>'''
 
 def slide_cta(s, i, n):
     img = photo_tag(s.get("photo"), "photo short")
