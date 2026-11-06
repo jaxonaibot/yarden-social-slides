@@ -1,0 +1,17 @@
+{
+  "slug": "sample-pov-seedlings",
+  "pillar": "pov",
+  "slides": [
+    {"kind":"hook","eyebrow":"POV","script":"Day 3…","text":"Me checking my seedlings <hl>14 times a day</hl> to see if anything happened."},
+    {"kind":"tip","heading":"Day 1: <hl>Nothing.</hl>","body":"You planted them this morning. You've looked four times. Still soil. This is normal. This is the whole first week."},
+    {"kind":"tip","heading":"Day 6: A tiny <hl>green loop</hl>","body":"Is that…? It is. You take a photo. You show someone who does not care as much as you do."},
+    {"kind":"tip","heading":"Day 9: They're all <hl>leaning</hl>","body":"They're reaching for the window. Turn the tray every day, or move them somewhere brighter. Tall and floppy means not enough light — not too much love."},
+    {"kind":"list","heading":"Things That <hl>Actually Help</hl>","items":["Check the soil, not the clock — water when the top is dry","More light than you think","Patience. Most seeds take 5–14 days.","A free class where you can ask the person who's done this a thousand times"]},
+    {"kind":"cta","photo":"jason-selfie-cabbage-bed.jpg","heading":"Still Checking Every Hour? <hl>Same.</hl>","body":"Bring your seedling questions to our <b>free</b>, in-person class with Jason — every two weeks at Makerfarm in Alameda. Leave with a plan for your own space."}
+  ],
+  "caption": {
+    "instagram": "Me checking my seedlings 14 times a day to see if anything happened. 🌱\n\nNothing for a week is normal. Leaning means they want more light, not more water. Most seeds take 5–14 days, and most beginners find the waiting is the hard part.\n\nGot a tray of seedlings and a lot of questions? Bring them to our free, in-person class with Jason — every two weeks at Makerfarm in Alameda. Register at the link in our bio.\n\n#seedstarting #beginnergardener #alamedaca #bayareagardening #zone10agardening",
+    "facebook": "Me checking my seedlings 14 times a day to see if anything happened.\n\nNothing for a week is normal. Leaning toward the window means they want more light, not more water. Most seeds take 5–14 days to show up, and most beginners find the waiting is the hard part.\n\nGot a tray of seedlings and a lot of questions? Bring them to our free, in-person gardening class with Jason — every two weeks at Makerfarm in Alameda. Register at learnwithyarden.com (link in our bio).\n\n#seedstarting #beginnergardener #alamedaca #bayareagardening",
+    "tiktok": "Checking my seedlings 14 times a day 🌱 nothing for a week is normal, leaning = more light. Free in-person class in Alameda, link in bio. #seedstarting #gardentok #alamedaca #bayareagardening #beginnergardener"
+  }
+}

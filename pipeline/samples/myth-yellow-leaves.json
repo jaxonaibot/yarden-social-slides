@@ -1,0 +1,17 @@
+{
+  "slug": "sample-myth-yellow-leaves",
+  "pillar": "myth",
+  "slides": [
+    {"kind":"hook","eyebrow":"Why did this happen?","text":"Yellow leaves don't mean your plant is dying. <hl>They mean it's talking.</hl>"},
+    {"kind":"tip","num":1,"heading":"Bottom Leaves, <hl>Soggy Soil</hl>","body":"The most common one. Roots sitting in wet soil can't breathe, so the plant lets the oldest leaves go. <b>The fix:</b> water less often, and make sure the pot drains."},
+    {"kind":"tip","num":2,"heading":"Pale All Over, <hl>Slow Growth</hl>","body":"Often the plant is just hungry. A top-up of compost around the base and a little patience usually brings the green back."},
+    {"kind":"tip","num":3,"heading":"Yellow <hl>Between the Veins</hl>","body":"Leaves go yellow but the veins stay green? That's usually a nutrient the plant can't take up — common in pots and in very alkaline soil. Compost and a mulch help over time."},
+    {"kind":"list","heading":"Before You <hl>Panic</hl>","items":["One or two old leaves yellowing is normal — plants shed","Check the soil first: wet, dry, or compacted?","Fix one thing at a time and give it a week","Still stumped? Bring a leaf (and a photo) to class"]},
+    {"kind":"cta","photo":"jason-tomato-corten-bed.jpg","heading":"Bring the Leaf. <hl>Ask Jason.</hl>","body":"Our <b>free</b>, in-person class is every two weeks at Makerfarm in Alameda. Get your actual plant problems answered and leave with a plan for your space."}
+  ],
+  "caption": {
+    "instagram": "Yellow leaves don't mean your plant is dying — they mean it's talking. 🌱\n\nBottom leaves + soggy soil? Water less. Pale all over? Usually hungry — add compost. Yellow between green veins? A nutrient it can't take up; compost and mulch help over time. Check the soil before you change anything.\n\nStill stumped? Bring the leaf to our free, in-person class with Jason — every two weeks at Makerfarm in Alameda. Register at the link in our bio.\n\n#planthelp #beginnergardener #alamedaca #bayareagardening #zone10agardening",
+    "facebook": "Yellow leaves don't mean your plant is dying — they mean it's talking.\n\nBottom leaves and soggy soil? Water less and check drainage. Pale all over with slow growth? It's usually hungry — a top-up of compost helps. Yellow between green veins? That's a nutrient the plant can't take up, common in pots; compost and mulch help over time. Always check the soil before you change anything.\n\nStill stumped? Bring the leaf (and a photo) to our free, in-person gardening class with Jason — every two weeks at Makerfarm in Alameda. Register at learnwithyarden.com (link in our bio).\n\n#planthelp #beginnergardener #alamedaca #bayareagardening",
+    "tiktok": "Yellow leaves = your plant talking, not dying 🌱 check the soil first. Free in-person class in Alameda, link in bio. #planthelp #gardentok #alamedaca #bayareagardening #beginnergardener"
+  }
+}

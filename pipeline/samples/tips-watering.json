@@ -1,0 +1,50 @@
+{
+  "slug": "sample-tips-watering",
+  "pillar": "beginner-tips",
+  "slides": [
+    {
+      "kind": "hook",
+      "eyebrow": "Beginner tip",
+      "text": "Most new gardeners don't underwater. <hl>They overwater.</hl>",
+      "script": "Real talk…"
+    },
+    {
+      "kind": "tip",
+      "num": 1,
+      "heading": "The <hl>Finger Test</hl>",
+      "body": "Push a finger into the soil up to the second knuckle. <b>Dry down there?</b> Water. <b>Still damp?</b> Wait a day and check again."
+    },
+    {
+      "kind": "tip",
+      "num": 2,
+      "heading": "Water <hl>Deep</hl>, Not Often",
+      "body": "A slow, thorough soak every few days grows deeper roots than a quick splash every day. Roots follow the water down."
+    },
+    {
+      "kind": "tip",
+      "num": 3,
+      "heading": "Aim for the <hl>Soil</hl>",
+      "body": "Water the base of the plant, not the leaves. Wet leaves in cool weather invite mildew — especially in our foggy Alameda mornings."
+    },
+    {
+      "kind": "list",
+      "heading": "Pots Dry <hl>Faster</hl>",
+      "items": [
+        "Check containers more often than beds",
+        "Make sure every pot has a drainage hole",
+        "A saucer full of water for days = too much"
+      ]
+    },
+    {
+      "kind": "cta",
+      "heading": "Still Not Sure? <hl>Ask Jason.</hl>",
+      "body": "Bring your watering questions to our <b>free</b>, in-person class — every two weeks at Makerfarm in Alameda. Leave with a plan for your own space.",
+      "photo": "jason-tomato-corten-bed.jpg"
+    }
+  ],
+  "caption": {
+    "instagram": "Most new gardeners don't underwater. They overwater. 💧\n\nA simple rule that helps: push a finger into the soil to the second knuckle. Dry? Water deeply. Damp? Wait. Pots dry out faster than beds, so check those more often.\n\nGot a plant you can't figure out? Bring it to our free, in-person gardening class with Jason — every two weeks at Makerfarm in Alameda. Register at the link in our bio.\n\n#beginnergardener #alamedaca #bayareagardening #containergardening #zone10agardening",
+    "facebook": "Most new gardeners don't underwater. They overwater.\n\nA simple rule that helps: push a finger into the soil to the second knuckle. Dry down there? Water deeply, at the base of the plant. Still damp? Wait a day. Pots dry out faster than beds, so check containers more often and make sure every one has a drainage hole.\n\nGot a plant you can't figure out? Bring it to our free, in-person gardening class with Jason — every two weeks at Makerfarm in Alameda. Register at learnwithyarden.com (link in our bio).\n\n#beginnergardener #alamedaca #bayareagardening",
+    "tiktok": "Most beginners overwater, not underwater 💧 the finger test fixes it. Free in-person class in Alameda, link in bio. #beginnergardener #alamedaca #bayareagardening #gardentok #zone10agardening"
+  }
+}

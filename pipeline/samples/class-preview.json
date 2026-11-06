@@ -1,0 +1,48 @@
+{
+  "slug": "sample-class-preview",
+  "pillar": "class-preview",
+  "slides": [
+    {
+      "kind": "photo-hook",
+      "photo": "jason-family-planting-bed.jpg",
+      "eyebrow": "Free class · Alameda, CA",
+      "text": "Everything you plant dies? You're not a bad gardener. <hl>You're an untaught one.</hl>",
+      "focus": "30% 35%"
+    },
+    {
+      "kind": "tip",
+      "num": 1,
+      "heading": "What You'll <hl>Actually Learn</hl>",
+      "body": "The four things every garden runs on: <b>soil, water, sunlight</b>, and <b>what to plant and when</b> — for our climate here in Alameda, not some blog's."
+    },
+    {
+      "kind": "list",
+      "heading": "Bring Your <hl>Real Questions</hl>",
+      "items": [
+        "Which corner of my yard gets enough sun?",
+        "Can I grow food on a north-facing balcony?",
+        "Why did my tomatoes do nothing last year?"
+      ]
+    },
+    {
+      "kind": "tip",
+      "num": 3,
+      "heading": "Leave With a <hl>Plan</hl>",
+      "body": "A plan for <b>your</b> yard, balcony or raised bed — not a generic checklist."
+    },
+    {
+      "kind": "quote",
+      "quote": "This class is just incredible. The whole time I've been mind-blown, taking tons of notes. What an inspiration, knowledge, kindness and a beautiful journey.",
+      "by": "Valerie H., class attendee"
+    },
+    {
+      "kind": "cta",
+      "photo": "jason-selfie-cabbage-bed.jpg"
+    }
+  ],
+  "caption": {
+    "instagram": "Everything you plant dies? You're not a bad gardener — you're an untaught one. 🌱\n\nOur free, in-person gardening class covers soil, water, sunlight, and what to plant when, for our climate here in Alameda. Jason (a master gardener) answers your questions about your actual space, and you leave with a plan.\n\nIt's free, every two weeks at Makerfarm in Alameda. Register at the link in our bio.\n\n#alamedaca #bayareagardening #zone10agardening #beginnergardener #growyourownfood",
+    "facebook": "Everything you plant dies? You're not a bad gardener — you're an untaught one.\n\nOur free, in-person gardening class covers soil, water, sunlight, and what to plant when, for our climate here in Alameda. Jason (a master gardener) answers your questions about your actual space, and you leave with a plan for your yard, balcony or raised bed.\n\nIt's free, every two weeks at Makerfarm in Alameda. Register at learnwithyarden.com (link in our bio).\n\n#alamedaca #bayareagardening #beginnergardener",
+    "tiktok": "Everything you plant dies? You're not a bad gardener, you're an untaught one 🌱 Free in-person class in Alameda, link in bio. #alamedaca #bayareagardening #zone10agardening #beginnergardener #gardentok"
+  }
+}

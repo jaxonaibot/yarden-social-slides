@@ -1,0 +1,774 @@
+{
+  "_readme": "Yarden photo library. 'tags' drive matching; 'subject' is what the caption may truthfully say. Never present a photo as something it is not. Photos marked stockLike:true should not be captioned as 'our garden'. Add a photo: drop the file here and add an entry.",
+  "photos": [
+    {
+      "file": "jason-student-beets.jpg",
+      "subject": "Jason and a student holding freshly pulled beets",
+      "tags": [
+        "jason",
+        "student",
+        "beets",
+        "harvest",
+        "class",
+        "class-preview"
+      ],
+      "orientation": "wide",
+      "label": "Gardening Instructor"
+    },
+    {
+      "file": "jason-selfie-cabbage-bed.jpg",
+      "subject": "Jason in a Yarden shirt beside a raised bed with cabbage and lettuce",
+      "tags": [
+        "jason",
+        "instructor",
+        "cabbage",
+        "lettuce",
+        "raised-beds",
+        "class-preview"
+      ],
+      "orientation": "portrait",
+      "label": "Gardening Instructor"
+    },
+    {
+      "file": "jason-family-planting-bed.jpg",
+      "subject": "Jason planting a raised bed with a family (kids included)",
+      "tags": [
+        "jason",
+        "family",
+        "kids",
+        "planting",
+        "class",
+        "class-preview",
+        "pov"
+      ],
+      "orientation": "landscape",
+      "label": "Gardening Instructor"
+    },
+    {
+      "file": "jason-tomato-corten-bed.jpg",
+      "subject": "Jason checking a tomato plant in a corten-steel raised bed with basil and marigolds",
+      "tags": [
+        "jason",
+        "tomato",
+        "basil",
+        "marigold",
+        "raised-beds",
+        "myth",
+        "tips"
+      ],
+      "orientation": "landscape",
+      "label": "Gardening Instructor"
+    },
+    {
+      "file": "testimonial-katrina.png",
+      "subject": "Facebook comment from a class attendee (Katrina L.)",
+      "tags": [
+        "testimonial",
+        "class-preview"
+      ],
+      "orientation": "banner",
+      "quoteOnly": true
+    },
+    {
+      "file": "testimonial-jwebb.png",
+      "subject": "Facebook comment from a class attendee (JWebb Fotos)",
+      "tags": [
+        "testimonial",
+        "class-preview"
+      ],
+      "orientation": "banner",
+      "quoteOnly": true
+    },
+    {
+      "file": "testimonial-valerie.png",
+      "subject": "Facebook comment from a class attendee (Valerie H.)",
+      "tags": [
+        "testimonial",
+        "class-preview"
+      ],
+      "orientation": "banner",
+      "quoteOnly": true
+    },
+    {
+      "file": "harvest-01-eggplant-peppers-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: tray of eggplants, peppers, cucumbers, squash and herbs",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "eggplant",
+        "peppers",
+        "cucumber",
+        "squash",
+        "herbs",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-02-basket-tomatoes-greens.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: basket of cherry tomatoes, slicing tomatoes, peppers, lettuce and parsley",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "peppers",
+        "lettuce",
+        "parsley",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-03-carrots-beets-chard-tomatoes.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: carrots, beets, chard, spinach, parsley, cherry tomatoes and nasturtiums",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "carrots",
+        "beets",
+        "chard",
+        "spinach",
+        "tomato",
+        "fall",
+        "spring"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-04-onions-tomatoes-eggplant-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: green onions, carrots, bag of tomatoes, white eggplant, cucumbers and yellow squash",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "onions",
+        "carrots",
+        "tomato",
+        "eggplant",
+        "squash",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-05-crate-tomatoes-sunflowers.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of heirloom and roma tomatoes, cherry tomatoes, sunflower heads, potatoes and strawberries",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "sunflower",
+        "potatoes",
+        "strawberries",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-06-kale-lettuce-lemons.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of curly kale, lettuce, arugula, chives, rosemary and lemons",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "kale",
+        "lettuce",
+        "arugula",
+        "lemons",
+        "herbs",
+        "winter",
+        "cool-season"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-07-tomatoes-radish-nasturtium.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: cherry tomatoes, a daikon radish, arugula and a nasturtium flower",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "radish",
+        "arugula",
+        "summer",
+        "fall"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-08-colander-peppers-kale.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: colander of bell peppers, chilies, lacinato kale and rosemary",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "peppers",
+        "kale",
+        "herbs",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-09-persimmons-carrots-melon.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: persimmons, carrots, eggplants and a small watermelon",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "persimmon",
+        "carrots",
+        "eggplant",
+        "melon",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-10-two-colanders-peppers-tomatoes.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: two colanders of tomatoes, bell peppers, chilies, eggplant and green onions",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "peppers",
+        "eggplant",
+        "onions",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-11-crate-peppers-eggplant-cherry-tomatoes.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of bell peppers, eggplants, zucchini, cherry tomatoes and basil",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "peppers",
+        "eggplant",
+        "zucchini",
+        "tomato",
+        "basil",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-12-box-chard-cucumbers-berries.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: box of golden cherry tomatoes, chard, cucumbers, beans, strawberries and raspberries",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "chard",
+        "cucumber",
+        "beans",
+        "strawberries",
+        "raspberries",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-13-green-tomatoes-lemons-chilies.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of green and ripening tomatoes, lemons, lacinato kale and green chilies",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "lemons",
+        "kale",
+        "peppers",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-14-green-beans-peppers-zucchini.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of green beans, bell peppers, cucumbers, zucchini and a red onion",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "beans",
+        "peppers",
+        "cucumber",
+        "zucchini",
+        "onions",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-15-yellow-squash-turnips-sage.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: yellow squash, pale green zucchini, turnips, sage and blackberries",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "squash",
+        "zucchini",
+        "turnips",
+        "sage",
+        "blackberries",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-16-zucchini-cucumbers-cherry-tomatoes.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of zucchini, striped cucumbers, chilies, basil and cherry tomatoes",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "zucchini",
+        "cucumber",
+        "peppers",
+        "basil",
+        "tomato",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-17-watermelon-orange-eggplant-basil.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: basil, carrots, a small watermelon, white and orange eggplants and squash blossoms",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "basil",
+        "carrots",
+        "melon",
+        "eggplant",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-18-kale-green-tomatoes.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of red Russian and lacinato kale, basil and ripening tomatoes",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "kale",
+        "basil",
+        "tomato",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-19-peppers-tomatoes-mint-basil.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of banana peppers, jalapeños, tomatoes, cucumber, squash blossoms, mint and basil",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "peppers",
+        "tomato",
+        "cucumber",
+        "basil",
+        "mint",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-20-watermelon-white-eggplant-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate with a watermelon, white and purple eggplants, butternut squash, chilies and basil",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "melon",
+        "eggplant",
+        "squash",
+        "peppers",
+        "basil",
+        "summer",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-21-crate-tomatoes-orange-peppers-eggplant.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of cherry and slicing tomatoes, orange bell peppers, eggplants and jalapeños",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "peppers",
+        "eggplant",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-22-two-crates-tomatoes-squash-peppers.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: two crates — tomatoes and eggplants above, squash, peppers, chilies and sage below",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "eggplant",
+        "squash",
+        "peppers",
+        "sage",
+        "summer",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-23-sage-tomatoes-yellow-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of sage, basil, oregano, tomatoes, cherry tomatoes and yellow squash",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "sage",
+        "basil",
+        "herbs",
+        "tomato",
+        "squash",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-24-crate-tomatoes-cucumbers-basil.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of slicing and cherry tomatoes, cucumbers, basil and squash blossoms",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "cucumber",
+        "basil",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-25-potatoes-tomatillos-peppers-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: red potatoes, tomatillos, bell peppers, cucumbers, yellow crookneck squash, cherry tomatoes and parsley",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "potatoes",
+        "tomatillos",
+        "peppers",
+        "cucumber",
+        "squash",
+        "tomato",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-26-white-squash-zucchini-eggplant-chilies.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of white round squash, zucchini, yellow squash, eggplants, shishito and serrano chilies and cherry tomatoes",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "squash",
+        "zucchini",
+        "eggplant",
+        "peppers",
+        "tomato",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-27-tomatoes-cucumbers-rosemary-basil.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of tomatoes, cucumbers, rosemary, basil, mint and thyme",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "cucumber",
+        "herbs",
+        "basil",
+        "rosemary",
+        "summer"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-28-two-crates-green-peppers-tomatoes-okra.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: two crates — green bell peppers, zucchini, crookneck squash, butternut and herbs above; roma and cherry tomatoes, tomatillos and okra below",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "peppers",
+        "zucchini",
+        "squash",
+        "tomato",
+        "tomatillos",
+        "okra",
+        "herbs",
+        "summer",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-29-crate-tomatoes-cucumbers-blossoms.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of tomatoes, cherry tomatoes, cucumbers, basil, thyme and squash blossoms",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "tomato",
+        "cucumber",
+        "basil",
+        "herbs",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-30-potatoes-chard-kale-beans.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: two crates of potatoes, chard, parsley, thyme, oregano, green beans, romaine and lacinato kale",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "potatoes",
+        "chard",
+        "kale",
+        "beans",
+        "herbs",
+        "lettuce",
+        "spring",
+        "fall"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-31-mini-pumpkins-tomatoes-zucchini.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of mini pumpkins, tomatoes, eggplant, shishito peppers, squash blossoms, oregano and zucchini",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "pumpkin",
+        "tomato",
+        "eggplant",
+        "peppers",
+        "zucchini",
+        "herbs",
+        "summer",
+        "fall"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "harvest-32-zucchini-kale-blossoms.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of zucchini, lacinato kale, a green bell pepper and squash blossoms",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "zucchini",
+        "kale",
+        "peppers",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-33-onions-zucchini-yellow-squash.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of onions, zucchini and yellow squash",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "onions",
+        "zucchini",
+        "squash",
+        "summer"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "harvest-34-onions-purple-peppers-eggplant.jpg",
+      "label": "Garden Harvest",
+      "subject": "Garden Harvest: crate of onions, green and purple bell peppers, jalapeños, an orange pepper and an eggplant",
+      "tags": [
+        "harvest",
+        "garden-harvest",
+        "onions",
+        "peppers",
+        "eggplant",
+        "summer",
+        "fall"
+      ],
+      "orientation": "portrait"
+    },
+    {
+      "file": "bed-01-enclosed-netted-bed-brassicas.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: long raised bed inside a wood-and-wire enclosure, planted with brassicas and greens",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "enclosure",
+        "pests",
+        "critters",
+        "brassicas",
+        "greens",
+        "winter",
+        "fall"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-02-three-beds-red-shed-kale-chard.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: three Yarden raised beds by a red shed, planted with kale, chard and young greens on drip",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "kale",
+        "chard",
+        "drip",
+        "fall",
+        "winter",
+        "yard"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-03-cabbage-bed-bird-netting.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: Yarden raised bed with cabbage, red cabbage, collards and onions under bird netting",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "cabbage",
+        "collards",
+        "onions",
+        "netting",
+        "pests",
+        "winter",
+        "fall"
+      ],
+      "orientation": "square"
+    },
+    {
+      "file": "bed-04-new-beds-cabbage-trellis-mulch.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: newly built Yarden raised beds with cabbage and greens, trellis panels and mulched paths",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "cabbage",
+        "trellis",
+        "mulch",
+        "fall",
+        "winter",
+        "yard"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-05-lettuce-bed-drip-netting.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: young lettuce heads on drip irrigation in a raised bed with netting",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "lettuce",
+        "drip",
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-06-sideyard-beds-squash-trellis-fence.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: side-yard raised beds along a fence with squash, peppers, onions and vines on trellises",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "side-yard",
+        "small-space",
+        "squash",
+        "peppers",
+        "trellis",
+        "summer"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-07-crate-greens-brassica-bed.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: a crate of just-picked greens on the edge of a raised bed of collards and broccoli",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "harvest",
+        "collards",
+        "broccoli",
+        "greens",
+        "winter",
+        "fall"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-08-lettuce-spinach-seedlings-closeup.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: close-up of young lettuce and spinach seedlings in a raised bed",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "seedlings",
+        "lettuce",
+        "spinach",
+        "spring",
+        "fall"
+      ],
+      "orientation": "landscape"
+    },
+    {
+      "file": "bed-09-red-lettuce-onions-spinach-closeup.jpg",
+      "label": "Garden Bed",
+      "subject": "Garden Bed: red leaf lettuce, green onions and spinach growing on drip in a raised bed",
+      "tags": [
+        "garden-bed",
+        "raised-beds",
+        "lettuce",
+        "onions",
+        "spinach",
+        "drip",
+        "spring",
+        "fall",
+        "winter"
+      ],
+      "orientation": "landscape"
+    }
+  ]
+}
