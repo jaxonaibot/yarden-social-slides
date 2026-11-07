@@ -2,7 +2,7 @@
 """Publish a rendered Yarden slideshow to TikTok, Facebook and Instagram through Buffer's GraphQL API.
 
 Usage:
-  python3 publish_buffer.py spec.json urls.json [--dry-run] [--mode shareNow|addToQueue]
+  python3 publish_buffer.py spec.json urls.json [--dry-run] [--mode shareNow|addToQueue] [--only tiktok,instagram]
   python3 publish_buffer.py --check            # verify token + list channels, no posting
 
 spec.json  : the slideshow spec (needs "caption": {instagram, facebook, tiktok} and slides[0].text as the hook)
@@ -63,6 +63,8 @@ def build_input(service, channel_id, spec, urls, mode):
     cap = spec["caption"]
     text = cap.get(service) or cap.get("instagram")
     hook = re.sub(r"<[^>]+>", "", spec["slides"][0]["text"])
+    if service == "tiktok" and any(u.lower().endswith(".png") for u in urls):
+        raise RuntimeError("TikTok photo posts reject PNG — slides must be JPEG")
     assets = [{"image": {"url": u, "metadata": {"altText": f"Slide {i+1} of a Yarden gardening tip"}}} for i, u in enumerate(urls)]
     inp = {"text": text, "channelId": channel_id, "schedulingType": "automatic", "mode": mode, "assets": assets}
     if service == "instagram":
@@ -78,25 +80,29 @@ def main(argv):
     mode = "shareNow"
     if "--mode" in argv:
         mode = argv[argv.index("--mode") + 1]
+    only = None
+    if "--only" in argv:
+        only = [x.strip().lower() for x in argv[argv.index("--only") + 1].split(",") if x.strip()]
     token = os.environ.get("BUFFER_ACCESS_TOKEN")
     if "--check" in argv:
         if not token:
             print(json.dumps({"ok": False, "error": "BUFFER_ACCESS_TOKEN not set"})); return 2
         ch = channels(token)
         print(json.dumps({"ok": True, "channels": ch, "picked": {k: (v or {}).get("id") for k, v in pick_channels(ch).items()}}, indent=2)); return 0
-    args = [a for a in argv if not a.startswith("--") and a not in (mode,)]
+    args = [a for a in argv if not a.startswith("--") and a not in (mode,) and (only is None or a != argv[argv.index("--only") + 1])]
+    services = [s for s in SERVICES if only is None or s in only]
     spec = json.load(open(args[0])); urls = json.load(open(args[1]))["urls"]
     assert 5 <= len(urls) <= 7, "need 5-7 slide URLs"
     results = {}
     if dry:
-        for s in SERVICES:
+        for s in services:
             results[s] = {"dryRun": True, "input": build_input(s, "<channel>", spec, urls, mode)}
         print(json.dumps({"ok": True, "dryRun": True, "results": results}, indent=2)); return 0
     if not token:
         print(json.dumps({"ok": False, "error": "BUFFER_ACCESS_TOKEN not set"})); return 2
     picked = pick_channels(channels(token))
     ok = True
-    for s in SERVICES:
+    for s in services:
         c = picked.get(s)
         if not c:
             results[s] = {"ok": False, "error": f"no unique {s} channel connected in Buffer (set BUFFER_{s.upper()}_CHANNEL_ID if several)"}; ok = False; continue

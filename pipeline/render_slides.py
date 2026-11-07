@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Render a Yarden slideshow (JSON spec) into 1080x1920 PNGs using the brand template.
+"""Render a Yarden slideshow (JSON spec) into 1080x1920 JPEGs using the brand template.
+(JPEG on purpose: TikTok photo posts reject PNG.)
 
 Usage:  python3 render_slides.py spec.json out_dir/
 
@@ -151,8 +152,9 @@ def render(spec_path, out_dir):
             page.set_content(TEMPLATE.replace("<!-- SLIDE_CONTENT -->", body), wait_until="networkidle")
             page.evaluate("document.fonts.ready")
             page.wait_for_timeout(300)
-            f = out / f"{spec['slug']}-{i+1:02d}.png"
-            page.screenshot(path=str(f), type="png")
+            # JPEG, not PNG: TikTok's photo-post API accepts only JPEG/WebP (PNG hangs in "processing"); IG/FB take JPEG fine.
+            f = out / f"{spec['slug']}-{i+1:02d}.jpg"
+            page.screenshot(path=str(f), type="jpeg", quality=92)
             paths.append(str(f))
         browser.close()
     return paths
