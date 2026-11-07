@@ -20,7 +20,7 @@ Voice: warm, encouraging, down-to-earth, practical — a knowledgeable neighbor,
 5. **class-preview** — what the class is, who it's for, what you leave with (use class/Jason photos + supplied testimonials)
 
 ## Slide rules
-- 5–7 slides, 1080×1920. Slide 1 = hook that works with no caption. Last slide = soft CTA (register free at learnwithyarden.com, link in bio).
+- 5–7 slides, 1080×1920. Slide 1 = hook that works with no caption. Last slide = soft CTA. The template prints "Save your spot — it's free" and "learnwithyarden.com" on the CTA slide, so the CTA body must NOT repeat the URL, "link in bio", or "register at…" — it describes the class in 1–2 sentences and stops. (Captions still say "link in bio".)
 - Large type, high contrast, content inside the safe zone (template handles it). Nothing that looks tappable — no buttons.
 - The swipe cue "(SWIPE LEFT TO WATCH)" appears centered on slide 1 only; no cue on any other slide (template enforces this).
 - Slide text must never overlap the swipe cue. The template reserves a strip above it; keep hook text under ~90 characters and bodies under ~240 so nothing overflows into that strip. After rendering, check slide 1 and any dense slide.

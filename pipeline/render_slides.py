@@ -18,7 +18,7 @@ RULES: no "Free in-person class · Alameda, CA" pill on any slide (the class is 
 <hl>…</hl> marks the one highlighted phrase in a heading.
 Photos are looked up in ./assets/photos/ ; a missing photo makes the slide fall back to a text card (never a stock image).
 """
-import json, os, sys, html, base64, pathlib
+import json, os, sys, re, html, base64, pathlib
 from playwright.sync_api import sync_playwright
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -111,17 +111,23 @@ def slide_quote(s, i, n):
       <div class="quote-by">— {hl(s["by"])}</div></div></div></div>
       {brand_corner() if s.get("brand", True) else ""}</div>'''
 
+def clean_cta_body(b):
+    """The CTA slide already prints the URL; strip any 'learnwithyarden.com' / 'link in bio' / 'register at' phrasing from the body."""
+    b = re.sub(r"\s*\(?(link in (our )?bio|link in profile)\)?[.!]?", "", b, flags=re.I)
+    b = re.sub(r"\s*(register|sign up|save your spot)( for free| free)?( today)? at (learnwithyarden\.com|the link[^.]*)[.!]?", "", b, flags=re.I)
+    b = re.sub(r"\s*\(?(at )?learnwithyarden\.com\)?[.!]?", "", b, flags=re.I)
+    return re.sub(r"\s{2,}", " ", b).strip()
+
 def slide_cta(s, i, n):
     img = photo_tag(s.get("photo"), "photo short")
     heading = s.get("heading", "Come Learn With Us <hl>In Person</hl>")
-    body = s.get("body", "A <b>free</b>, in-person gardening class with Jason, every two weeks at Makerfarm in Alameda. "
-                         "Bring your questions about your own yard, balcony or raised bed.")
+    body = clean_cta_body(s.get("body", "A <b>free</b>, in-person gardening class with Jason, every two weeks at Makerfarm in Alameda. "
+                         "Bring your questions about your own yard, balcony or raised bed."))
     return f'''<div class="slide ground-paper"><div class="glow-amber"></div><div class="safe vc">
       <img class="logo" src="{LOGO_SRC}" alt="Yarden" style="align-self:flex-start">
       <div class="stack" style="margin-top:48px"><div class="script">Hey there!</div>
       <div class="heading">{hl(heading)}</div>{img or ""}<div class="body">{hl(body)}</div>
-      <div class="cta-line">Save your spot — <span class="hl">it's free</span></div><div class="url">learnwithyarden.com</div>
-      <div class="body" style="font-size:36px;color:var(--green-700)">Link in bio · No credit card, no catch.</div></div></div>
+      <div class="cta-line">Save your spot — <span class="hl">it's free</span></div><div class="url">learnwithyarden.com</div></div></div>
       {WAVE.format(fill="#d1fae0")}</div>'''
 
 RENDER = {"hook": slide_hook, "photo-hook": slide_photo_hook, "tip": slide_tip, "list": slide_list, "photo": slide_photo, "quote": slide_quote, "cta": slide_cta}
