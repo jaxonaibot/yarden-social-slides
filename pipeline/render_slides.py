@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render a Yarden slideshow (JSON spec) into 1080x1920 JPEGs using the brand template.
+"""Render a Yarden slideshow (JSON spec) into JPEGs using the brand template, in two sizes:
+  out_dir/<slug>-NN.jpg       1080x1920 (9:16)  -> TikTok
+  out_dir/feed/<slug>-NN.jpg  1080x1350 (4:5)   -> Instagram + Facebook feeds (9:16 gets pillarboxed there)
+Any text overflow is printed as a WARNING on stderr.
 (JPEG on purpose: TikTok photo posts reject PNG.)
 
 Usage:  python3 render_slides.py spec.json out_dir/
@@ -133,7 +136,24 @@ def slide_cta(s, i, n):
 
 RENDER = {"hook": slide_hook, "photo-hook": slide_photo_hook, "tip": slide_tip, "list": slide_list, "photo": slide_photo, "quote": slide_quote, "cta": slide_cta}
 
-def render(spec_path, out_dir):
+# Two output formats from one spec:
+#   story -> 1080x1920 (9:16) in out_dir/        : TikTok
+#   feed  -> 1080x1350 (4:5)  in out_dir/feed/   : Instagram + Facebook (their feeds cap portrait at 4:5;
+#            a 9:16 image is shown pillarboxed with white bars on both sides)
+FORMATS = {"story": (1920, ""), "feed": (1350, "feed")}
+
+OVERFLOW_JS = """() => {
+  const H = document.querySelector('.slide').getBoundingClientRect().height, W = 1080, bad = [];
+  document.querySelectorAll('.safe .stack, .safe .stack > *, .swipe').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < 0 || r.bottom > H || r.left < 0 || r.right > W) bad.push(el.className + ' ' + Math.round(r.top) + '..' + Math.round(r.bottom));
+  });
+  const sw = document.querySelector('.swipe'), st = document.querySelector('.safe .stack');
+  if (sw && st && st.getBoundingClientRect().bottom > sw.getBoundingClientRect().top) bad.push('text overlaps swipe cue');
+  return bad;
+}"""
+
+def render(spec_path, out_dir, formats=("story", "feed")):
     spec = json.loads(pathlib.Path(spec_path).read_text())
     slides = spec["slides"]
     assert 5 <= len(slides) <= 7, "A slideshow must have 5-7 slides"
@@ -146,16 +166,24 @@ def render(spec_path, out_dir):
     paths = []
     with sync_playwright() as p:
         browser = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
-        page = browser.new_page(viewport={"width": 1080, "height": 1920}, device_scale_factor=1)
-        for i, s in enumerate(slides):
-            body = RENDER[s["kind"]](s, i, len(slides))
-            page.set_content(TEMPLATE.replace("<!-- SLIDE_CONTENT -->", body), wait_until="networkidle")
-            page.evaluate("document.fonts.ready")
-            page.wait_for_timeout(300)
-            # JPEG, not PNG: TikTok's photo-post API accepts only JPEG/WebP (PNG hangs in "processing"); IG/FB take JPEG fine.
-            f = out / f"{spec['slug']}-{i+1:02d}.jpg"
-            page.screenshot(path=str(f), type="jpeg", quality=92)
-            paths.append(str(f))
+        for fmt in formats:
+            height, cls = FORMATS[fmt]
+            dest = out / "feed" if fmt == "feed" else out
+            dest.mkdir(parents=True, exist_ok=True)
+            page = browser.new_page(viewport={"width": 1080, "height": height}, device_scale_factor=1)
+            tpl = TEMPLATE.replace('<html lang="en">', f'<html lang="en" class="{cls}">') if cls else TEMPLATE
+            for i, s in enumerate(slides):
+                body = RENDER[s["kind"]](s, i, len(slides))
+                page.set_content(tpl.replace("<!-- SLIDE_CONTENT -->", body), wait_until="networkidle")
+                page.evaluate("document.fonts.ready")
+                page.wait_for_timeout(300)
+                for problem in page.evaluate(OVERFLOW_JS):
+                    print(f"WARNING overflow [{fmt}] slide {i+1}: {problem}", file=sys.stderr)
+                # JPEG, not PNG: TikTok's photo-post API accepts only JPEG/WebP (PNG hangs in "processing"); IG/FB take JPEG fine.
+                f = dest / f"{spec['slug']}-{i+1:02d}.jpg"
+                page.screenshot(path=str(f), type="jpeg", quality=92)
+                paths.append(str(f))
+            page.close()
         browser.close()
     return paths
 

@@ -87,6 +87,42 @@ body{font-family:var(--font-body);color:var(--green-900);background:var(--green-
 .mt-auto{margin-top:auto}
 .center{text-align:center;align-items:center}
 .divider{height:6px;width:160px;border-radius:var(--rfull);background:var(--amber-400);margin:36px 0}
+
+/* ---- FEED format: 1080x1350 (4:5) for Instagram + Facebook feeds ----
+   Their feeds cap portrait images at 4:5; a 9:16 image gets pillarboxed (white bars left/right).
+   No platform UI overlays a feed image, so the safe zone is just a margin. */
+html.feed,html.feed body,.feed .slide{height:1350px}
+.feed .safe{top:96px;bottom:84px;padding-bottom:84px}
+.feed .swipe{bottom:96px;font-size:28px}
+.feed .hook{font-size:100px}
+.feed .hook.sm{font-size:84px}
+.feed .script{font-size:60px}
+.feed .heading{font-size:76px}
+.feed .body,.feed .slide.ground-paper .body{font-size:48px;line-height:1.45}
+.feed .check{font-size:44px;line-height:1.35}
+.feed .check::before{font-size:48px}
+.feed .card,.feed .card-warm{padding:44px}
+.feed .num{width:100px;height:100px;font-size:54px;margin-bottom:24px}
+.feed .divider{margin:24px 0}
+.feed .stack{gap:30px}
+.feed .quote{font-size:42px}
+.feed .quote-mark{font-size:110px}
+.feed .photo.tall{height:600px}
+.feed .photo.short{height:300px}
+/* CTA photo (Jason): taller strip, biased upward so faces stay in frame */
+.feed .slide.ground-paper .photo.short{height:390px;object-position:center 30%}
+.feed .photo.natural{max-height:560px}
+.feed .cta-line{font-size:46px}
+.feed .url{font-size:42px}
+.feed .logo{height:60px}
+.feed .wave{height:110px;width:100%}
+.feed .glow-amber{width:700px;height:700px}
+.feed .glow-sky{width:600px;height:600px}
+/* CTA slide in feed: no swipe cue, so no reserved strip at the bottom */
+.feed .slide.ground-paper .safe{top:72px;bottom:110px;padding-bottom:0}
+.feed .slide.ground-paper .body{font-size:44px;line-height:1.42}
+.feed .slide.ground-paper .stack{gap:24px}
+.feed .slide.ground-paper .stack[style*="margin-top"]{margin-top:28px!important}
 </style>
 </head>
 <body>

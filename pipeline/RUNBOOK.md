@@ -20,7 +20,8 @@ Voice: warm, encouraging, down-to-earth, practical — a knowledgeable neighbor,
 5. **class-preview** — what the class is, who it's for, what you leave with (use class/Jason photos + supplied testimonials)
 
 ## Slide rules
-- 5–7 slides, 1080×1920. Slide 1 = hook that works with no caption. Last slide = soft CTA. The template prints "Save your spot — it's free" and "learnwithyarden.com" on the CTA slide, so the CTA body must NOT repeat the URL, "link in bio", or "register at…" — it describes the class in 1–2 sentences and stops. (Captions still say "link in bio".)
+- Two sizes are rendered from every spec: **1080×1920 (9:16) for TikTok** and **1080×1350 (4:5) for Instagram + Facebook** (out/feed/). IG/FB feeds cap portrait images at 4:5 — a 9:16 image shows up shrunk with white bars on both sides, so never send the 9:16 set to them.
+- 5–7 slides. Slide 1 = hook that works with no caption. Last slide = soft CTA. The template prints "Save your spot — it's free" and "learnwithyarden.com" on the CTA slide, so the CTA body must NOT repeat the URL, "link in bio", or "register at…" — it describes the class in 1–2 sentences and stops. (Captions still say "link in bio".)
 - Large type, high contrast, content inside the safe zone (template handles it). Nothing that looks tappable — no buttons.
 - The swipe cue "(SWIPE LEFT TO WATCH)" appears centered on slide 1 only; no cue on any other slide (template enforces this).
 - Slide text must never overlap the swipe cue. The template reserves a strip above it; keep hook text under ~90 characters and bodies under ~240 so nothing overflows into that strip. After rendering, check slide 1 and any dense slide.
@@ -45,5 +46,5 @@ Voice: warm, encouraging, down-to-earth, practical — a knowledgeable neighbor,
 Hook line → 1–3 short sentences of value → CTA: register for the free class, link in bio → 3–5 hashtags (broad + local: #alamedaca #bayareagardening #zone10agardening #eastbaygardening). Facebook may include the URL in text. TikTok caption short.
 
 ## Files
-- `template.html` — brand template (tokens from the Yarden design system). `render_slides.py` — JSON spec → PNGs. `publish_buffer.py` — Buffer GraphQL publisher (`--check`, `--dry-run`). `assets/photos/photos.json` — photo library. `samples/` — approved sample specs.
+- `template.html` — brand template (tokens from the Yarden design system). `render_slides.py` — JSON spec → JPEGs in both sizes (9:16 + 4:5 feed), warns on text overflow. `publish_buffer.py` — Buffer GraphQL publisher (`--check`, `--dry-run`); urls.json `urls` → TikTok, `feedUrls` → Instagram + Facebook. `assets/photos/photos.json` — photo library. `samples/` — approved sample specs.
 - State lives in the pipeline artifact's database: `config/settings`, `config/calendar`, `backlog/*`, `posts/*`, `errors/*`.

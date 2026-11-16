@@ -6,7 +6,10 @@ Usage:
   python3 publish_buffer.py --check            # verify token + list channels, no posting
 
 spec.json  : the slideshow spec (needs "caption": {instagram, facebook, tiktok} and slides[0].text as the hook)
-urls.json  : {"urls": ["https://raw.githubusercontent.com/.../slide-01.png", ...]} — public image URLs in slide order
+urls.json  : {"urls": [...9:16 JPEG URLs...], "feedUrls": [...4:5 JPEG URLs...]} — public image URLs in slide order.
+             "urls" (1080x1920) go to TikTok. "feedUrls" (1080x1350, from out/feed/) go to Instagram + Facebook,
+             whose feeds cap portrait images at 4:5 and pillarbox anything taller (white bars on both sides).
+             If "feedUrls" is missing, Instagram/Facebook fall back to "urls" and the result carries a warning.
 
 Env: BUFFER_ACCESS_TOKEN (required unless --dry-run).
 Exit code 0 = every channel accepted; 2 = at least one channel failed (details in stdout JSON). Never retries.
@@ -15,6 +18,7 @@ import json, os, sys, re, time, urllib.request, urllib.error
 
 API = "https://api.buffer.com"
 SERVICES = ("tiktok", "facebook", "instagram")
+FEED_SERVICES = ("instagram", "facebook")   # get the 4:5 feedUrls
 
 def gql(token, query, variables=None):
     body = json.dumps({"query": query, "variables": variables or {}}).encode()
@@ -91,13 +95,18 @@ def main(argv):
         print(json.dumps({"ok": True, "channels": ch, "picked": {k: (v or {}).get("id") for k, v in pick_channels(ch).items()}}, indent=2)); return 0
     args = [a for a in argv if not a.startswith("--") and a not in (mode,) and (only is None or a != argv[argv.index("--only") + 1])]
     services = [s for s in SERVICES if only is None or s in only]
-    spec = json.load(open(args[0])); urls = json.load(open(args[1]))["urls"]
+    spec = json.load(open(args[0])); url_doc = json.load(open(args[1]))
+    urls = url_doc["urls"]; feed_urls = url_doc.get("feedUrls")
     assert 5 <= len(urls) <= 7, "need 5-7 slide URLs"
+    if feed_urls is not None:
+        assert len(feed_urls) == len(urls), "feedUrls must have one URL per slide, same order as urls"
+    urls_for = lambda s: (feed_urls or urls) if s in FEED_SERVICES else urls
+    warning = None if feed_urls else "no feedUrls: Instagram/Facebook got 9:16 images and will show white side bars"
     results = {}
     if dry:
         for s in services:
-            results[s] = {"dryRun": True, "input": build_input(s, "<channel>", spec, urls, mode)}
-        print(json.dumps({"ok": True, "dryRun": True, "results": results}, indent=2)); return 0
+            results[s] = {"dryRun": True, "input": build_input(s, "<channel>", spec, urls_for(s), mode)}
+        print(json.dumps({"ok": True, "dryRun": True, "warning": warning, "results": results}, indent=2)); return 0
     if not token:
         print(json.dumps({"ok": False, "error": "BUFFER_ACCESS_TOKEN not set"})); return 2
     picked = pick_channels(channels(token))
@@ -107,7 +116,7 @@ def main(argv):
         if not c:
             results[s] = {"ok": False, "error": f"no unique {s} channel connected in Buffer (set BUFFER_{s.upper()}_CHANNEL_ID if several)"}; ok = False; continue
         try:
-            res = gql(token, CREATE, {"input": build_input(s, c["id"], spec, urls, mode)})["createPost"]
+            res = gql(token, CREATE, {"input": build_input(s, c["id"], spec, urls_for(s), mode)})["createPost"]
             if res.get("post"):
                 results[s] = {"ok": True, "postId": res["post"]["id"], "dueAt": res["post"].get("dueAt"), "status": res["post"].get("status"), "channel": c["name"]}
             else:
@@ -115,7 +124,7 @@ def main(argv):
         except Exception as e:
             results[s] = {"ok": False, "error": str(e), "channel": c["name"]}; ok = False
         time.sleep(1)
-    print(json.dumps({"ok": ok, "results": results}, indent=2))
+    print(json.dumps({"ok": ok, "warning": warning, "results": results}, indent=2))
     return 0 if ok else 2
 
 if __name__ == "__main__":
