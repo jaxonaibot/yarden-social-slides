@@ -9,7 +9,8 @@ spec.json  : the slideshow spec (needs "caption": {instagram, facebook, tiktok} 
 urls.json  : {"urls": [...9:16 JPEG URLs...], "feedUrls": [...4:5 JPEG URLs...]} — public image URLs in slide order.
              "urls" (1080x1920) go to TikTok. "feedUrls" (1080x1350, from out/feed/) go to Instagram + Facebook,
              whose feeds cap portrait images at 4:5 and pillarbox anything taller (white bars on both sides).
-             If "feedUrls" is missing, Instagram/Facebook fall back to "urls" and the result carries a warning.
+             If "feedUrls" is missing, it looks for <dir>/feed/<file> next to each URL; if those are not all live,
+             Instagram/Facebook fall back to "urls" and the result carries a warning.
 
 Env: BUFFER_ACCESS_TOKEN (required unless --dry-run).
 Exit code 0 = every channel accepted; 2 = at least one channel failed (details in stdout JSON). Never retries.
@@ -63,6 +64,23 @@ mutation Create($input: CreatePostInput!) {
   }
 }"""
 
+def derive_feed_urls(urls):
+    """When urls.json has no feedUrls, look for the 4:5 copies hosted next to the 9:16 ones in a feed/ subfolder.
+    Returns the list only if every one answers HTTP 200 with an image type; otherwise None."""
+    out = []
+    for u in urls:
+        base, _, name = u.rpartition("/")
+        f = f"{base}/feed/{name}"
+        try:
+            req = urllib.request.Request(f, method="HEAD", headers={"User-Agent": "yarden-social-pipeline/1.0"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                if r.status != 200 or not r.headers.get("Content-Type", "").startswith("image/"):
+                    return None
+        except Exception:
+            return None
+        out.append(f)
+    return out
+
 def build_input(service, channel_id, spec, urls, mode):
     cap = spec["caption"]
     text = cap.get(service) or cap.get("instagram")
@@ -100,8 +118,10 @@ def main(argv):
     assert 5 <= len(urls) <= 7, "need 5-7 slide URLs"
     if feed_urls is not None:
         assert len(feed_urls) == len(urls), "feedUrls must have one URL per slide, same order as urls"
+    if feed_urls is None:
+        feed_urls = derive_feed_urls(urls)   # .../slides/DATE/x.jpg -> .../slides/DATE/feed/x.jpg, if all are live
     urls_for = lambda s: (feed_urls or urls) if s in FEED_SERVICES else urls
-    warning = None if feed_urls else "no feedUrls: Instagram/Facebook got 9:16 images and will show white side bars"
+    warning = None if feed_urls else "no 4:5 feed images found: Instagram/Facebook got 9:16 images and will show white side bars"
     results = {}
     if dry:
         for s in services:

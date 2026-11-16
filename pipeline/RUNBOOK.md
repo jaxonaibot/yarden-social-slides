@@ -31,6 +31,14 @@ Voice: warm, encouraging, down-to-earth, practical — a knowledgeable neighbor,
 - DEFAULT TO PHOTOS: slide 1 should be a "photo-hook" using a library photo whenever any photo plausibly fits the topic (match on tags, crops, season, or just "a real Yarden bed/harvest"); use the plain gradient hook only when nothing in the library suits. The CTA slide should normally carry a "Gardening Instructor" photo of Jason (rotate among the four). Aim for photos on roughly 4 out of 5 posts; vary which photos are used across days.
 - Photos: only from assets/photos (photos.json). Caption a photo only as its "subject" says. stockLike photos are never "our garden". Never generate or pull images and present them as ours.
 
+## Image sizes & hosting (do this every run)
+`render_slides.py` writes two sets: `out/<slug>-NN.jpg` (1080×1920, 9:16 → TikTok) and `out/feed/<slug>-NN.jpg` (1080×1350, 4:5 → Instagram + Facebook).
+- Host BOTH: 9:16 files in `slides/YYYY-MM-DD/`, 4:5 files in `slides/YYYY-MM-DD/feed/` (same file names). Verify every URL of both sets returns 200 image/jpeg.
+- urls.json: `{"urls": [9:16 URLs], "feedUrls": [4:5 URLs]}`, both in slide order. (If feedUrls is left out, publish_buffer.py looks for the `feed/` copies itself; a non-null `"warning"` in its output means IG/FB got 9:16 images.)
+- Check slide 1 and the CTA slide of both sets; a "WARNING overflow" line from the renderer means shorten that slide.
+- Log `feedSlideUrls` alongside `slideUrls` in posts/YYYY-MM-DD.
+- If the repo clone is on a detached HEAD, push with `git push origin HEAD:main`.
+
 ## Accuracy guardrails
 - No made-up statistics, testimonials, student quotes, or harvest results.
 - Seasonal advice must be correct for today's date in zone 10a / Alameda; flag region-dependence.
